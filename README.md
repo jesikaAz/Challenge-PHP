@@ -1,5 +1,7 @@
 # Challenge-PHP99
 
+Jessica Anschutz 
+
 Choix du 1er niveau : Vous choississez les valeurs du ou des tableaux. Chaque tableau compte 2 à 3 valeurs.
 
 	Exercice 1 : Un algo pour créer un tableau associatif à partir de deux autres tableaux.
