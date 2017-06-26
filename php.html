@@ -17,35 +17,55 @@ Date: Semaine 26
 <body> <!-- Exercices sur le PHP  -->
 
     <h1>Challenge PHP</h1>
-    
-        <p><img src="php.png" class="img" width="400px"> by Jessica </p>
    
     <div>
     
     <h2>Exercice 1 niveau 2</h2>
 
-    <!-- Utilisation de la fonction array_combine -->
+    <!-- Utilisation de la fonction array_push -->
 
-    <!--array_combine :crée un tableau à partir de deux autres tableaux-->
+    <!--array_push :empile un ou plusieurs éléments à la fin d'un tableau-->
+  
 
     <p> 
-        $viandes = array('poulet', 'boeuf', 'mouton','porc');
-        $cuissons = array('à point', 'bien cuit', 'saignant', 'bleu');
-        $commandes = array_combine($viandes, $cuissons); <br>
+        <?php 
 
-        print_r($commandes);
+		$cuissons =["à point","bien cuit","saignant","bleu"];
+		$viandes = ["poulet","boeuf","mouton"];
+
+		function commandes($tab1, $tab2){
+  			$result = [];
+	
+    		foreach($tab1 as $value1){
+	    		foreach ($tab2 as $value2) {
+	    		array_push($result,"Le " .$value2." est ".$value1);
+    			}
+			}
+		return $result;
+			}
+
+		print_r(commandes($cuissons,$viandes));
+	?>
         
     </p>
     
     <p> Qui nous donne : 
     
         Array
-        (
-        [poulet] => à point
-        [boeuf] => bien cuit
-        [mouton] => saignant
-        [porc] => bleu
-        )
+		(
+		    [0] => Le poulet est à point
+		    [1] => Le boeuf est à point
+		    [2] => Le mouton est à point
+		    [3] => Le poulet est bien cuit
+		    [4] => Le boeuf est bien cuit
+		    [5] => Le mouton est bien cuit
+		    [6] => Le poulet est saignant
+		    [7] => Le boeuf est saignant
+		    [8] => Le mouton est saignant
+		    [9] => Le poulet est bleu
+		    [10] => Le boeuf est bleu
+		    [11] => Le mouton est bleu
+		)
     </p>
 
     </div>
@@ -94,23 +114,45 @@ Date: Semaine 26
         
     <h2>Exercice 3 niveau 2</h2>
 
-    <!-- Utilisation de la fonction array_search -->
-    
-    <!-- la fonction array_search,recherche dans un tableau la clé associée à une valeur-->
+    <!-- Utilisation de la fonction array_push -->
     
     <p>     
-            $fruits = array ('banane', 'pomme', 'fraise', 'framboise','tomate', 'noix de coco', 'ananas'); <br>
+            <?php
+ 
+		$fruits = array ('banane', 'pomme', 'fraise', 'framboise','tomate', 'noix de coco', 'ananas'); 
+ 
+ 		function fruit($tab)  {
+     
+    		$index=count($tab)-2;
+     	
+     		$result=[] ;
+     
+    	while ($index<count($tab)) {
+     
+    	array_push($result,$tab[$index]);
+     
+     	$index++; }
+     
+     	return $result; }
 
-            $position = array_search('noix de coco', $fruits);
-            echo '"noix de coco" se trouve en position ' . $position . ' ' ; <br>
-
-            $position = array_search('ananas', $fruits);
-            echo '"ananas" se trouve en position ' . $position . ' ' ;
+     	echo"Les deux derniers fruits sont :\n";
+    
+    	print_r(fruit ($fruits));
+  
+		?>
             
     </p>
         
    <p> Qui nous donne: 
-    "noix de coco" se trouve en position 5 "ananas" se trouve en position 6
+    
+       Les deux derniers fruits sont :
+			
+		Array
+		(
+		    [0] => noix de coco
+		    [1] => ananas
+		)
+
    </p>
         
    </div>
@@ -119,25 +161,40 @@ Date: Semaine 26
         
      <h2>Exercice 4 niveau 2</h2>
 
-    <!-- Utilisation de la fonction array_slice -->
+    <!-- Utilisation de la fonction unset -->
     
-    <!-- la fonction array_slice, extrait une portion de tableau -->
+    <!-- la fonction unset, détruit une variable -->
+        
     <p>
             
-            $input = array("Harry", "Hilary", "Harrington", "Hagrid","Holmes"); <br>
-            $output = array_slice($input, 2);  <br>
-            print_r($output);
+          <?php
+ 
+ 			$input = array("Harry", "Hilary", "Harrington", "Hagrid","Holmes"); 
+ 
+ 			function output ($tab) {
+    		 $i=count($tab)/2;
+    		unset($tab[$i]);
+     		return $tab;
+ 			}
+        
+        	echo"Les meilleurs prénoms sont :\n";
+
+            print_r(output($input));
+		?>
             
     
     </p>
         
     <p>Qui nous donne: 
-            Array
-            (
-            [0] => Harrington
-            [1] => Hagrid
-            [2] => Holmes
-            )
+           
+        Les meilleurs prénoms sont :
+		 Array
+			(
+			    [0] => Harry
+			    [1] => Hilary
+			    [3] => Hagrid
+			    [4] => Holmes
+			)
     </p>
   
   </div>
