@@ -1,0 +1,40 @@
+/*--Description:Challenge PHP
+Auteur: Jessica Anschutz 
+Date: Semaine 26 --*/
+
+body {
+    background-color: whitesmoke;
+}
+
+/* Titres*/
+
+h1 {
+    color:#153962;
+    font-size:60px;
+    font-family: 'Open Sans', arial, serif;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+h2 {
+    color:#153962; 
+    font-size:22px;
+    font-family: 'Open Sans', arial, serif; 
+    text-align: center;  
+}
+
+p {
+    text-align: center;
+    font-style: italic;
+    font-size:16px;
+    font-family: 'Open Sans', arial, serif;
+    
+}
+
+div {
+    margin: 20px;
+    padding: 20px;
+}
+
+
+
